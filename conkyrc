@@ -1,0 +1,36 @@
+own_window yes
+cpu_avg_samples 2
+net_avg_samples 2
+update_interval 1
+double_buffer yes
+alignment top_left
+gap_x 20
+gap_y 50
+draw_borders no
+font 7x13
+
+TEXT
+${color white}[${color #00ff00}${exec whoami}${color white}][${color red}$nodename${color white}] -
+${color #ffccaa}$sysname $kernel ${color #CCCCCC}on ${color #888888}$machine
+${color #ffccaa}Uptime: $uptime
+${color #ffccaa}IP    :${color #BBBBBB} $addr
+${color #ffccaa}${time %b/%a/%d}             ${color #00ff00}${time %k:%M:%S}
+${color white}${hr 1}
+${color #ffccaa}cpu: ${color #CCCCCC}${cpu}%
+${color #ffccaa}${cpugraph 25 ff0000 ff00ff}
+${color #ffccaa}${color #BBBBBB}$cpubar
+${color white}${hr 1}
+${color #ffccaa}ram   : ${color #CCCCCC}$mem${color #888888}/${color #CCCCCC}$memmax ${color #888888}- ${color #CCCCCC}$memperc%
+${color #ffccaa}${memgraph 25 ff0000 ff00ff}
+${color #ffccaa}${color #BBBBBB}$membar
+${color white}${hr 1}
+${color #ffccaa}swap  : ${color #CCCCCC}$swap${color #888888}/${color #CCCCCC}$swapmax ${color #888888}   - ${color #CCCCCC}$swapperc%
+${color #ffccaa}swap  : ${color #BBBBBB}$swapbar
+${color #ffccaa}load  : ( ${color #CCCCCC}$loadavg ${color #888888})
+${color #ffccaa}procesos: ${color #CCCCCC}$processes	${color #888888}corriendo: ${color #CCCCCC}$running_processes
+${color #ffccaa}Actif :${color #BBBBBB} $uptime
+${color #ffccaa}NET   :${color #BBBBBB} Eth0
+${color #ffccaa}DOWN  : ${color #CCCCCC}${downspeed eth0} k/s	    ${color #ffccaa}UP: ${color #CCCCCC}${upspeed eth0} k/s
+${color #ffccaa}${downspeedgraph eth0 25,100 ff0000 0000ff}	  ${color #888888}${upspeedgraph eth0 25,100 0000ff ff0000}
+${color #ffccaa}TOTAL: ${color #CCCCCC}${totaldown eth0}	        ${color #ffccaa}TOTAL: ${color #CCCCCC}${totalup eth0}
+
