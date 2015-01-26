@@ -1,4 +1,7 @@
 bashrc
 ======
+My bashrc
 
-my .bashrc
+conkyrc
+=======
+My conkyrc
